@@ -15,7 +15,7 @@ get_volume_value() {
 	for ((i=0; i < ${volume}; i++)); do
 		str="${str}■"
 	done
-	for ((i=${volume}; i < 16; i++)); do
+	for ((i=${volume}; i <= 16; i++)); do
 		str="${str} "
 	done
 	echo "#[bold][${str}]#[default]"
@@ -31,6 +31,6 @@ get_volume() {
 	local volume_string=`get_volume_value`
 	[ `is_mac_os` = 'false' ] && return 0
 #
-	[ `is_muted` = 'true' ] && echo ${muted_string} || ${volume_string}
+	[ `is_muted` = 'true' ] && echo ${muted_string} || echo ${volume_string}
 }
 get_volume
