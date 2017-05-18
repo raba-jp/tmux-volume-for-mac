@@ -18,7 +18,7 @@ get_volume_value() {
 	for ((i=${volume}; i <= 16; i++)); do
 		str="${str} "
 	done
-	echo "#[bold][${str}]#[default]"
+	echo "[${str}]"
 }
 
 is_muted() {
